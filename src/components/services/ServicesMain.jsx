@@ -1,14 +1,14 @@
 import TitleContentComponent from "../common/TitleContentComponent";
-import Services from "../common/Services";
-import homeConfiguration from "../../config/siteContent/homeConfiguration";
+import ServicesGrid from "./ServicesGrid";
+import servicesInformation from "../../config/siteContent/servicesInformation";
 
 const ServiceMain = () => (
   <TitleContentComponent
     main
-    title={homeConfiguration.servicesSection.title}
-    subtitle={homeConfiguration.servicesSection.subtitle}
+    title={servicesInformation.servicesSection.title}
+    subtitle={servicesInformation.servicesSection.subtitle}
   >
-    <Services />
+    <ServicesGrid />
   </TitleContentComponent>
 );
 

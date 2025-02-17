@@ -1,19 +1,20 @@
 import CardsGrid from "../../common/CardsGrid";
-import ValueCard from "./ValueCard";
+import ServiceCard from "./ServiceCard";
 import homeConfiguration from "../../../config/siteContent/homeConfiguration";
 
-const Values = () => (
+const Services = () => (
   <CardsGrid
-    items={homeConfiguration.companyValues.values}
-    CardComponent={ValueCard}
+    items={homeConfiguration.companyServices}
+    isCentered={true}
+    CardComponent={ServiceCard}
     getKey={(item) => item.id}
     getProps={(item) => ({
-      iconName: item.iconName,
+      image: item.image,
       title: item.title,
       description: item.description,
-      type: item.type,
+      badge: item.badge,
     })}
   />
 );
 
-export default Values;
+export default Services;

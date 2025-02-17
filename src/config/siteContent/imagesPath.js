@@ -31,6 +31,12 @@ const imagesPath = {
     "/images/services/repair_and_maintenance.jpg",
     "/images/services/maintenance_plans.jpg",
   ],
+  // HVAC Installation
+  hvacInstallation: [
+    "/images/services/hvac/hvac_installation_1.webp",
+    "/images/services/hvac/hvac_installation_2.webp",
+    "/images/services/hvac/hvac_installation_3.webp",
+  ],
 };
 
 export default imagesPath;

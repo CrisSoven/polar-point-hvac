@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import PropTypes from "prop-types";
 import { ChevronRight } from "mdi-material-ui";
-import ServiceBadge from "./ServiceBadge";
+import ServiceBadge from "../../common/ServiceBadge";
 import { useState } from "react";
 
 const ServiceCard = ({ image, title, description, badge }) => {
@@ -82,7 +82,7 @@ ServiceCard.propTypes = {
   description: PropTypes.string.isRequired,
   badge: PropTypes.shape({
     text: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(["success", "warning", "error", "info"]).isRequired,
+    type: PropTypes.oneOf(["success", "warning", "error", "secondary"]).isRequired,
   }),
 };
 

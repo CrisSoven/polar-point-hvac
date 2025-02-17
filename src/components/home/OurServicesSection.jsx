@@ -1,5 +1,5 @@
 import TitleContentComponent from "../common/TitleContentComponent";
-import Services from "../common/Services";
+import Services from "../home/services/Services";
 import homeConfiguration from "../../config/siteContent/homeConfiguration";
 
 const OurServicesSection = () => (
@@ -8,7 +8,6 @@ const OurServicesSection = () => (
     subtitle={homeConfiguration.servicesSection.subtitle}
   >
     <Services />
-    
   </TitleContentComponent>
 );
 

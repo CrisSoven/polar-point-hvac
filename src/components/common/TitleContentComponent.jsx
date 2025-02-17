@@ -7,18 +7,16 @@ const CardComponent = ({ main, title, subtitle, children }) => {
       <CardContent>
         <Typography
           variant={"h4"}
-          fontWeight={"bold"}
+          fontWeight={500}
           align={main ? "left" : "center"}
-          mb={2}
+          mb={1}
         >
           {title}
         </Typography>
-        <Typography variant="h6" align={main ? "left" : "center"}>
+        <Typography align={main ? "left" : "center"}>
           {subtitle}
         </Typography>
-        <Box py={4}>
-          {children}
-        </Box>
+        <Box py={4}>{children}</Box>
       </CardContent>
     </Card>
   );

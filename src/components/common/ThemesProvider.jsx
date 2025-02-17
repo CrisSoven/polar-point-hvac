@@ -14,6 +14,7 @@ const theme = createTheme({
     warning: { main: themeConfig.colors.yellow },
   },
   typography: {
+    fontFamily: "Jost, serif",
     h1: {
       fontSize: "3rem",
       fontWeight: 700,

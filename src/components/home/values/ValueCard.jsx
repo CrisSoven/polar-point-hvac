@@ -52,14 +52,14 @@ const ValueCard = ({ iconName, title, description, type }) => {
 
 Icon.propTypes = {
   iconName: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(["success", "warning", "error", "info"]).isRequired,
+  type: PropTypes.oneOf(["success", "warning", "error", "secondary"]).isRequired,
 };
 
 ValueCard.propTypes = {
   iconName: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(["success", "warning", "error", "info"]).isRequired,
+  type: PropTypes.oneOf(["success", "warning", "error", "secondary"]).isRequired,
 };
 
 export default ValueCard;

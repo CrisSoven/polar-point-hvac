@@ -28,6 +28,12 @@ const homeConfiguration = {
         //types: "success" (green) | "warning" (yellow) | "error" (red) | "secondary" (blue) || null (primary)
         type: "success",
       },
+      button: {
+        text: "View more",
+        link: "/services/hvac-installation",
+        type: "secondary",
+        icon: true,
+      },
     },
     {
       id: 2,
@@ -36,6 +42,12 @@ const homeConfiguration = {
       description:
         "We offer repair services to quickly restore system performance, alongside comprehensive maintenance to optimize efficiency, prevent issues, and extend the lifespan of your equipment.",
       badge: null,
+      button: {
+        text: "View more",
+        link: "/services/repair-and-maintenance",
+        type: "secondary",
+        icon: true,
+      },
     },
     {
       id: 3,
@@ -47,6 +59,12 @@ const homeConfiguration = {
         text: "Coming Soon!",
         //types: "success" (green) | "warning" (yellow) | "error" (red) | "secondary" (blue) || null (primary)
         type: "warning",
+      },
+      button: {
+        text: "Coming Soon!",
+        link: "/services/maintenance-plans",
+        type: "warning",
+        icon: false,
       },
     },
   ],
