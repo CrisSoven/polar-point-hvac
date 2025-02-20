@@ -1,7 +1,7 @@
 import { Card, CardContent, Typography, Box } from "@mui/material";
 import PropTypes from "prop-types";
 
-const CardComponent = ({ main, title, subtitle, children }) => {
+const TitleContentComponent = ({ main, title, subtitle, children }) => {
   return (
     <Card sx={{ p: 2, bgcolor: "transparent" }} elevation={0}>
       <CardContent>
@@ -22,11 +22,11 @@ const CardComponent = ({ main, title, subtitle, children }) => {
   );
 };
 
-CardComponent.propTypes = {
+TitleContentComponent.propTypes = {
   main: PropTypes.bool,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };
 
-export default CardComponent;
+export default TitleContentComponent;

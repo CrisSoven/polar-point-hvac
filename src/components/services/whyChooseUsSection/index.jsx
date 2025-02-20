@@ -1,6 +1,6 @@
-import TitleContentComponent from "../common/TitleContentComponent";
+import TitleContentComponent from "../../common/TitleContentComponent";
 import WhyChooseUsKeyPoints from "./WhyChooseUsKeyPoints";
-import servicesInformation from "../../config/siteContent/servicesInformation";
+import servicesInformation from "../../../config/siteContent/servicesInformation";
 
 const WhyChooseUs = () => (
   <TitleContentComponent

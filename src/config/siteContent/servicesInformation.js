@@ -69,6 +69,29 @@ const servicesInformation = {
     conclusion:
       "This attention to detail, combined with our dedication to quality and thoughtful planning, results in installations that provide lasting performance, reliability, and comfort.",
   },
+  repairAndMaintenancePage: {
+    title: "Repair and Maintenance",
+    subtitle:
+      "We offer repair services to quickly restore system performance, alongside comprehensive maintenance to optimize efficiency, prevent issues, and extend the lifespan of your equipment.",
+    content: [
+      {
+        subtitle: "Repair",
+        content: "When an HVAC issue arises, it's important to address it promptly to avoid more extensive damage to your system.",
+        image: imagesPath.hvacInstallation[0],
+        text: "Our expert repair services are designed to quickly identify and resolve problems, restoring your system’s performance and reliability. Delaying repairs or ignoring issues can lead to long-term damage, reducing the lifespan of your equipment and leading to more costly repairs down the line. We understand that when your HVAC system isn’t functioning properly, it can disrupt your comfort and daily life, which is why we focus on providing dependable, efficient solutions to get your system back up and running as soon as possible.",
+        direction: "row",
+      },
+      {
+        subtitle: "Maintenance",
+        content: "Regular HVAC maintenance is essential to keep your system operating at its best. Without it, small issues can escalate into major problems—leading to system failures when you need it most, costly repairs, or even water leaks that could damage your property.",
+        image: imagesPath.hvacInstallation[1],
+        text: "Routine maintenance ensures that your system is running efficiently, reduces the risk of breakdowns, and helps prevent long-term damage to both your equipment and your home or business. By investing in regular maintenance, you're protecting not only the comfort of your space but also the longevity of your HVAC system, keeping it running smoothly when you need it the most.",
+        direction: "row",
+      },
+    ],
+    conclusion:
+      "This attention to detail, combined with our dedication to quality and thoughtful planning, results in installations that provide lasting performance, reliability, and comfort.",
+  },
 };
 
 export default servicesInformation;

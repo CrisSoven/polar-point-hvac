@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import PropTypes from "prop-types";
 import { ChevronRight } from "mdi-material-ui";
-import ServiceBadge from "../common/ServiceBadge";
+import ServiceBadge from "../../common/ServiceBadge";
 import { useNavigate } from "react-router-dom";
 
 const ViewMoreServiceCard = ({ image, title, description, badge, button }) => {

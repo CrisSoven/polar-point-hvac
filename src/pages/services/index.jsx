@@ -1,12 +1,12 @@
 import MainLayout from "../../layout/MainLayout";
-import ServicesMain from "../../components/services/ServicesMain";
-import WhyChooseUs from "../../components/services/WhyChooseUs";
+import ServicesSection from "../../components/services/servicesSection";
+import WhyChooseUsSection from "../../components/services/whyChooseUsSection";
 
 const Services = () => {
   return (
     <MainLayout>
-      <ServicesMain />
-      <WhyChooseUs />
+      <ServicesSection />
+      <WhyChooseUsSection />
     </MainLayout>
   );
 };

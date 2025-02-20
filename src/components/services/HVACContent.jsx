@@ -1,5 +1,5 @@
 import TitleContentComponent from "../common/TitleContentComponent";
-import RowContent from "../services/RowContent";
+import RowContent from "./RowContent";
 import servicesInformation from "../../config/siteContent/servicesInformation";
 import { Typography } from "@mui/material";
 

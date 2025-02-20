@@ -1,8 +1,8 @@
-import TitleContentComponent from "../common/TitleContentComponent";
+import TitleContentComponent from "../../common/TitleContentComponent";
 import ServicesGrid from "./ServicesGrid";
-import servicesInformation from "../../config/siteContent/servicesInformation";
+import servicesInformation from "../../../config/siteContent/servicesInformation";
 
-const ServiceMain = () => (
+const ServicesSection = () => (
   <TitleContentComponent
     main
     title={servicesInformation.servicesSection.title}
@@ -12,4 +12,4 @@ const ServiceMain = () => (
   </TitleContentComponent>
 );
 
-export default ServiceMain;
+export default ServicesSection;

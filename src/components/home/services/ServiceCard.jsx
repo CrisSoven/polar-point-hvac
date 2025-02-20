@@ -22,7 +22,7 @@ const ServiceCard = ({ image, title, description, badge }) => {
         boxShadow: "0px 4px 40px 0px rgba(0, 0, 0, 0.10)",
         display: "flex",
         flexDirection: "column",
-        transition: "all 0.3s ease",
+        transition: "transform 0.3s ease",
         transform: isHovered ? "scale(1.05)" : "scale(1)",
         "&:hover": {
           cursor: "pointer",
@@ -47,30 +47,32 @@ const ServiceCard = ({ image, title, description, badge }) => {
           display: "flex",
           flexDirection: "column",
           overflow: "hidden",
-          maxHeight: isHovered ? "500px" : "100px",
-          transition: "max-height 0.3s ease-in-out",
+          transition: "opacity 0.3s ease-in-out, max-height 0.3s ease-in-out",
+          opacity: isHovered ? 1 : 0.9,
+          maxHeight: isHovered ? "500px" : "120px",
         }}
       >
-        <Typography fontWeight={600} align="center" noWrap>
+        <Typography fontWeight={600} align="center" sx={{ transition: "opacity 0.3s ease-in-out" }}>
           {title}
         </Typography>
-        {isHovered && (
-          <>
-            <Typography gutterBottom variant="body2" align="justify">
-              {description}
-            </Typography>
-            <CardActions>
-              <Button
-                variant="contained"
-                color="secondary"
-                endIcon={<ChevronRight />}
-                fullWidth
-              >
-                View more
-              </Button>
-            </CardActions>
-          </>
-        )}
+        <Typography
+          gutterBottom
+          variant="body2"
+          align="justify"
+          sx={{ display: isHovered ? "block" : "none" }}
+        >
+          {description}
+        </Typography>
+        <CardActions sx={{ display: isHovered ? "flex" : "none" }}>
+          <Button
+            variant="contained"
+            color="secondary"
+            endIcon={<ChevronRight />}
+            fullWidth
+          >
+            View more
+          </Button>
+        </CardActions>
       </CardContent>
     </Card>
   );

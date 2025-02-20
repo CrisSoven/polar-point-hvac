@@ -1,6 +1,6 @@
-import CardsGrid from "../common/CardsGrid";
+import CardsGrid from "../../common/CardsGrid";
 import ViewMoreServiceCard from "./ViewMoreServiceCard";
-import homeConfiguration from "../../config/siteContent/homeConfiguration";
+import homeConfiguration from "../../../config/siteContent/homeConfiguration";
 
 const Services = () => (
   <CardsGrid
