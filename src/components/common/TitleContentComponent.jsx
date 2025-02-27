@@ -1,10 +1,9 @@
-import { Card, CardContent, Typography, Box } from "@mui/material";
+import { Container, Typography, Box } from "@mui/material";
 import PropTypes from "prop-types";
 
 const TitleContentComponent = ({ main, title, subtitle, children }) => {
   return (
-    <Card sx={{ p: 2, bgcolor: "transparent" }} elevation={0}>
-      <CardContent>
+    <Container sx={{py: 2}}>
         <Typography
           variant={"h4"}
           fontWeight={500}
@@ -17,8 +16,7 @@ const TitleContentComponent = ({ main, title, subtitle, children }) => {
           {subtitle}
         </Typography>
         <Box py={4}>{children}</Box>
-      </CardContent>
-    </Card>
+    </Container>
   );
 };
 

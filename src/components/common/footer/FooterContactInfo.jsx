@@ -36,17 +36,15 @@ const Title = ({ title, url }) => {
 
 const FooterContactInfo = ({ iconName, title, url }) => {
   return (
-    <Grid2 container spacing={1} alignItems="center" component="div">
-      <Grid2
-        component="a"
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={title}
-      >
-        <Icon iconName={iconName} />
-      </Grid2>
-      <Grid2>
+    <Grid2 container
+      sx={{
+        padding: 1,
+        display: "grid",
+        gridTemplateColumns: "auto 1fr",
+        gap: 1,
+      }}>
+      <Icon iconName={iconName} />
+      <Grid2 sx={{ overflow: "hidden" }}>
         <Title title={title} url={url} />
       </Grid2>
     </Grid2>

@@ -37,6 +37,53 @@ const imagesPath = {
     "/images/services/hvac/hvac_installation_2.webp",
     "/images/services/hvac/hvac_installation_3.webp",
   ],
+  //Brands we service
+  brands: [
+    {
+      src: "/brands/bryant.png",
+      alt: "Bryant Logo",
+    },
+    {
+      src: "/brands/carrier.png",
+      alt: "Carrier Logo",
+    },
+    {
+      src: "/brands/comfort_aire.png",
+      alt: "Comfort Aire Logo",
+    },
+    {
+      src: "/brands/concord.jpg",
+      alt: "Concord Logo",
+    },
+    {
+      src: "/brands/daikin.png",
+      alt: "Daikin Logo",
+    },
+    {
+      src: "/brands/fujitsu.png",
+      alt: "Fujitsu Logo",
+    },
+    {
+      src: "/brands/goodman.png",
+      alt: "Goodman Logo",
+    },
+    {
+      src: "/brands/lennox.jpg",
+      alt: "Lennox Logo",
+    },
+    {
+      src: "/brands/mitsubishi.jpg",
+      alt: "Mitsubishi Logo",
+    },
+    {
+      src: "/brands/trane.png",
+      alt: "Trane Logo",
+    },
+    {
+      src: "/brands/york.jpg",
+      alt: "York Logo",
+    },
+  ]
 };
 
 export default imagesPath;

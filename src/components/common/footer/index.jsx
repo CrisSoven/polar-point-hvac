@@ -16,7 +16,6 @@ const FooterLinks = ({ links }) => (
           <Link
             to={to}
             style={{
-              textDecoration: "none",
               color: "white",
               fontWeight: "bold",
             }}
