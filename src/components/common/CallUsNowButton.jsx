@@ -6,7 +6,7 @@ const CallUsNowButton = () => {
     <Button
       variant="contained"
       color="error"
-      href={`tel:${generalInformation.companyPhone}`}
+      href={`tel:${generalInformation.companyPhone.fieldContent}`}
       target="_blank"
       rel="noopener noreferrer"
     >

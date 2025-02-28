@@ -37,53 +37,93 @@ const imagesPath = {
     "/images/services/hvac/hvac_installation_2.webp",
     "/images/services/hvac/hvac_installation_3.webp",
   ],
-  //Brands we service
+  // Equipment images
+  equipments: [
+    {
+      src: "/images/equipment/equipments/condenser.jpg",
+      alt: "Condenser",
+    },
+    {
+      src: "/images/equipment/equipments/forced_air_units.jpg",
+      alt: "Forced Air Units",
+    },
+    {
+      src: "/images/equipment/equipments/heat_pump_forced_air.jpg",
+      alt: "Heat Pump Forced",
+    },
+    {
+      src: "/images/equipment/equipments/heat_pump_mini_splits.jpg",
+      alt: "Heat Pump Mini Split",
+    },
+    {
+      src: "/images/equipment/equipments/heat_pump.jpg",
+      alt: "Heat Pump",
+    },
+    {
+      src: "/images/equipment/equipments/ptac_unit.jpg",
+      alt: "PTAC Unit",
+    },
+    {
+      src: "/images/equipment/equipments/rtu_rooftop_packaged_units.jpg",
+      alt: "RTU Rooftop Packaged Units",
+    },
+    {
+      src: "/images/equipment/equipments/split_unit_wall_mount_mini_splits.jpg",
+      alt: "Split Unit Wall Mount Mini Splits",
+    },
+    {
+      src: "/images/equipment/equipments/vrv_vrf_systems.png",
+      alt: "VRV VRF Systems",
+    },
+  ],
+
+  // Brands we service
   brands: [
     {
-      src: "/brands/bryant.png",
+      src: "/images/equipment/brands/bryant.png",
       alt: "Bryant Logo",
     },
     {
-      src: "/brands/carrier.png",
+      src: "/images/equipment/brands/carrier.png",
       alt: "Carrier Logo",
     },
     {
-      src: "/brands/comfort_aire.png",
+      src: "/images/equipment/brands/comfort_aire.png",
       alt: "Comfort Aire Logo",
     },
     {
-      src: "/brands/concord.jpg",
+      src: "/images/equipment/brands/concord.jpg",
       alt: "Concord Logo",
     },
     {
-      src: "/brands/daikin.png",
+      src: "/images/equipment/brands/daikin.png",
       alt: "Daikin Logo",
     },
     {
-      src: "/brands/fujitsu.png",
+      src: "/images/equipment/brands/fujitsu.png",
       alt: "Fujitsu Logo",
     },
     {
-      src: "/brands/goodman.png",
+      src: "/images/equipment/brands/goodman.png",
       alt: "Goodman Logo",
     },
     {
-      src: "/brands/lennox.jpg",
+      src: "/images/equipment/brands/lennox.jpg",
       alt: "Lennox Logo",
     },
     {
-      src: "/brands/mitsubishi.jpg",
+      src: "/images/equipment/brands/mitsubishi.jpg",
       alt: "Mitsubishi Logo",
     },
     {
-      src: "/brands/trane.png",
+      src: "/images/equipment/brands/trane.png",
       alt: "Trane Logo",
     },
     {
-      src: "/brands/york.jpg",
+      src: "/images/equipment/brands/york.jpg",
       alt: "York Logo",
     },
-  ]
+  ],
 };
 
 export default imagesPath;

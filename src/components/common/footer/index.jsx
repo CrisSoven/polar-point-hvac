@@ -1,6 +1,6 @@
 import { Box, Container, Typography, Grid2 } from "@mui/material";
 import FooterContactInfo from "./FooterContactInfo";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import FooterTitle from "./FooterTitle";
 import FooterSubtitle from "./FooterSubtitle";
@@ -8,25 +8,36 @@ import PolarPointLogo from "../PolarPointLogo";
 import generalInformation from "../../../config/siteContent/generalInformation";
 import imagesPath from "../../../config/siteContent/imagesPath";
 
-const FooterLinks = ({ links }) => (
-  <nav>
-    <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-      {links.map(({ to, label }) => (
-        <li key={to} style={{ marginBottom: "8px" }}>
-          <Link
-            to={to}
-            style={{
-              color: "white",
-              fontWeight: "bold",
-            }}
-          >
-            <Typography variant="body2">{label}</Typography>
-          </Link>
-        </li>
-      ))}
-    </ul>
-  </nav>
-);
+const FooterLinks = ({ links }) => {
+  const navigate = useNavigate();
+
+  return (
+    <nav>
+      <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+        {links.map(({ to, label }) => (
+          <li key={to} style={{ marginBottom: "8px" }}>
+            <Link
+              to={to}
+              onClick={(e) => {
+                // Evita el comportamiento predeterminado de navegación
+                e.preventDefault();
+                // Navega de forma programática con desplazamiento suave
+                navigate(to);
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              style={{
+                color: "white",
+                fontWeight: "bold",
+              }}
+            >
+              <Typography variant="body2">{label}</Typography>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
 
 FooterLinks.propTypes = {
   links: PropTypes.arrayOf(
@@ -99,22 +110,22 @@ const Footer = () => {
             <FooterTitle>{generalInformation.footerTitles[4]}</FooterTitle>
             <PolarPointLogo sx={{ height: 40, mb: 2 }} src={imagesPath.logo} />
             <FooterContactInfo
-              iconName="MapMarkerOutline"
-              title={generalInformation.companyAddress}
+              iconName={generalInformation.companyAddress.iconName}
+              title={generalInformation.companyAddress.fieldContent}
               url={`https://www.google.com/maps?q=${encodeURIComponent(
-                generalInformation.companyAddress
+                generalInformation.companyAddress.fieldContent
               )}`}
               sx={{ mb: 1 }}
             />
             <FooterContactInfo
-              iconName="EmailOutline"
-              title={generalInformation.companyEmail}
-              url={`mailto:${generalInformation.companyEmail}`}
+              iconName={generalInformation.companyEmail.iconName}
+              title={generalInformation.companyEmail.fieldContent}
+              url={`mailto:${generalInformation.companyEmail.fieldContent}`}
             />
             <FooterContactInfo
-              iconName="PhoneOutline"
-              title={generalInformation.companyPhone}
-              url={`tel:${generalInformation.companyPhone}`}
+              iconName={generalInformation.companyPhone.iconName}
+              title={generalInformation.companyPhone.fieldContent}
+              url={`tel:${generalInformation.companyPhone.fieldContent}`}
             />
           </Grid2>
         </Grid2>

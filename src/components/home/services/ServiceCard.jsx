@@ -22,9 +22,9 @@ const ServiceCard = ({ image, title, description, badge }) => {
         boxShadow: "0px 4px 40px 0px rgba(0, 0, 0, 0.10)",
         display: "flex",
         flexDirection: "column",
-        transition: "transform 0.3s ease",
-        transform: isHovered ? "scale(1.05)" : "scale(1)",
+        transition: "all 0.3s ease-in-out",
         "&:hover": {
+          transform: "scale(1.05)",
           cursor: "pointer",
         },
       }}
@@ -52,7 +52,11 @@ const ServiceCard = ({ image, title, description, badge }) => {
           maxHeight: isHovered ? "500px" : "120px",
         }}
       >
-        <Typography fontWeight={600} align="center" sx={{ transition: "opacity 0.3s ease-in-out" }}>
+        <Typography
+          fontWeight={600}
+          align="center"
+          sx={{ transition: "opacity 0.3s ease-in-out" }}
+        >
           {title}
         </Typography>
         <Typography
@@ -84,7 +88,8 @@ ServiceCard.propTypes = {
   description: PropTypes.string.isRequired,
   badge: PropTypes.shape({
     text: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(["success", "warning", "error", "secondary"]).isRequired,
+    type: PropTypes.oneOf(["success", "warning", "error", "secondary"])
+      .isRequired,
   }),
 };
 

@@ -74,14 +74,14 @@ const HeroSection = () => {
         >
           <Box
             component="img"
-            src={imagesPath.winter1.src}
-            alt={imagesPath.winter1.alt}
+            src={homeConfiguration.heroSection.imagesDisplayed[0].src}
+            alt={homeConfiguration.heroSection.imagesDisplayed[0].alt}
             sx={imageStyle}
           />
           <Box
             component="img"
-            src={imagesPath.winter2.src}
-            alt={imagesPath.winter2.alt}
+            src={homeConfiguration.heroSection.imagesDisplayed[1].src}
+            alt={homeConfiguration.heroSection.imagesDisplayed[1].alt}
             sx={imageStyle}
           />
         </Grid2>

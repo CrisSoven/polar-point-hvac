@@ -4,6 +4,7 @@ import Services from "../pages/services/";
 import HVACInstallation from "../pages/services/HVACInstallation";
 import RepairAndMaintenance from "../pages/services/RepairAndMaintenance"
 import Equipment from "../pages/Equipment"
+import ContactUs from "../pages/ContactUs";
 
 const AppRoutes = () => {
   return (
@@ -14,6 +15,7 @@ const AppRoutes = () => {
         <Route path="/services/hvac-installation" element={<HVACInstallation />} />
         <Route path="/services/repair-and-maintenance" element={<RepairAndMaintenance />} />
         <Route path="/equipment" element={<Equipment />} />
+        <Route path="/contact-us" element={<ContactUs />} />
       </Routes>
     </Router>
   );

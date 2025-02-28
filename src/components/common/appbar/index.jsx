@@ -1,11 +1,13 @@
 import AppBarPrimary from "./AppBarPrimary";
 import AppBarMenu from "./AppBarMenu";
 
-const AppBarCombined = () => (
-  <>
-    <AppBarPrimary />
-    <AppBarMenu />
-  </>
-);
+const AppBarCombined = () => {
+  return (
+    <>
+      <AppBarPrimary />
+      <AppBarMenu />
+    </>
+  );
+};
 
 export default AppBarCombined;

@@ -1,76 +1,67 @@
-import React, { useEffect, useRef } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { Box } from "@mui/material";
 import imagesPath from "../../config/siteContent/imagesPath";
 
-const BrandsSlider = () => {
-  const sliderRef = useRef(null);
-
-  useEffect(() => {
-    const slider = sliderRef.current;
-
-    const speed = 25000;
-
-    // Animación continua
-    const animateSlider = () => {
-      slider.style.transition = `transform ${speed}ms linear`;
-      slider.style.transform = `translateX(-${slider.scrollWidth / 2}px)`; // Mueve el slider hacia la izquierda
-    };
-
-    // Reiniciar la animación sin corte visual
-    const resetSlider = () => {
-      slider.style.transition = "none"; // Sin transición
-      slider.style.transform = `translateX(0)`; // Vuelve al principio
-      setTimeout(() => {
-        animateSlider(); // Reinicia la animación
-      }, 50); // El pequeño retraso evita el "corte" visual
-    };
-
-    // Aplicar animación inicial
-    animateSlider();
-
-    // Ajustar el evento para reiniciar la animación
-    slider.addEventListener("transitionend", resetSlider);
-
-    return () => {
-      slider.removeEventListener("transitionend", resetSlider);
-    };
-  }, []);
+const BrandSlider = () => {
+  const settings = {
+    infinite: true,
+    speed: 5000,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 0,
+    cssEase: "linear",
+    pauseOnHover: false,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: { slidesToShow: 4 },
+      },
+      {
+        breakpoint: 900,
+        settings: { slidesToShow: 3 },
+      },
+      {
+        breakpoint: 600,
+        settings: { slidesToShow: 2 },
+      },
+      {
+        breakpoint: 400,
+        settings: { slidesToShow: 1 },
+      },
+    ],
+  };
 
   return (
-    <Box
-      sx={{
-        overflow: "hidden",
-        position: "relative",
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
-      <Box
-        ref={sliderRef}
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-        }}
-      >
-        {/* Duplicamos las imágenes para el efecto de scroll infinito */}
-        {imagesPath.brands.concat(imagesPath.brands).map(({ src, alt }, index) => (
-          <Box key={index} sx={{ padding: "10px" }}>
+    <Box sx={{ width: "100%", py: 2 }}>
+      <Slider {...settings}>
+        {imagesPath.brands.map((brand, index) => (
+          <Box
+            key={index}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "100px",
+            }}
+          >
             <img
-              src={src}
-              alt={alt}
+              src={brand.src}
+              alt={brand.alt}
               style={{
-                width: "120px",
-                height: "auto",
+                width: "160px",
+                maxHeight: "80px",
                 objectFit: "contain",
               }}
             />
           </Box>
         ))}
-      </Box>
+      </Slider>
     </Box>
   );
 };
 
-export default BrandsSlider;
+export default BrandSlider;

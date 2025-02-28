@@ -8,6 +8,8 @@ const homeConfiguration = {
     title: "Comfort and Efficiency for Your Home and Business",
     subtitle:
       "Experts in repair, installation, and maintenance of HVAC systems.",
+    //default: summer1, summer2, winter1, winter2
+    imagesDisplayed: [imagesPath.summer1, imagesPath.summer2],
   },
   // Services Section Information
   servicesSection: {

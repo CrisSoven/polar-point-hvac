@@ -1,15 +1,6 @@
 import { useState, useEffect } from "react";
 import AppBarIcon from "./AppBarIcon";
-
-const businessHours = {
-  Sunday: { open: null, close: null },
-  Monday: { open: "09:00", close: "17:00" },
-  Tuesday: { open: "09:00", close: "17:00" },
-  Wednesday: { open: "09:00", close: "17:00" },
-  Thursday: { open: "09:00", close: "17:00" },
-  Friday: { open: "09:00", close: "17:00" },
-  Saturday: { open: "10:00", close: "14:00" },
-};
+import { businessHours } from "../../../config/bussinessHours";  
 
 const ScheduleBarIcon = () => {
   const [status, setStatus] = useState({ title: "Loading...", subtitle: "" });
@@ -44,7 +35,7 @@ const ScheduleBarIcon = () => {
       const closeTime = closeHour * 60 + closeMinute;
 
       if (currentTime >= openTime && currentTime < closeTime) {
-        setStatus({ title: "Open Now", subtitle: `Closes ${todaySchedule.close}` });
+        setStatus({ title: "Open Now", subtitle: `Closes: ${todaySchedule.close}` });
       } else {
         setStatus({ title: "Closed", subtitle: `Opens ${todaySchedule.open} tomorrow` });
       }

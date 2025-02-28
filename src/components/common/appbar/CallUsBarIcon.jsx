@@ -5,7 +5,7 @@ const CallUsBarIcon = () => {
   return (
     <AppBarIcon
       iconName="Phone"
-      title={`${generalInformation.companyPhone}`}
+      title={`${generalInformation.companyPhone.fieldContent}`}
       subtitle="The Service You Need, Just a Call Away"
     />
   );

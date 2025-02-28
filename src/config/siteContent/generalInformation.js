@@ -19,9 +19,21 @@ const generalInformation = {
   ],
 
   // Company Contact Information used in different parts of the site (footer, buttons, contact uspage, etc.)
-  companyAddress: "1189 Silverton Rd Toms River, NJ 08755",
-  companyEmail: "billing@polarpointhvac.com",
-  companyPhone: "732.736.1393",
+  companyAddress: {
+    iconName: "MapMarkerOutline",
+    fieldName: "Address",
+    fieldContent: "1189 Silverton Rd Toms River, NJ 08755",
+  },
+  companyEmail: {
+    iconName: "EmailOutline",
+    fieldName: "Email",
+    fieldContent: "billing@polarpointhvac.com",
+  },
+  companyPhone: {
+    iconName: "PhoneOutline",
+    fieldName: "Phone",
+    fieldContent: "732.736.1393",
+  },
   businessHours: {
     schedule: {
       "Mon - Thu": "8 AM - 5 PM",
