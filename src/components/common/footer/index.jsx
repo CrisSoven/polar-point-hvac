@@ -7,6 +7,7 @@ import FooterSubtitle from "./FooterSubtitle";
 import PolarPointLogo from "../PolarPointLogo";
 import generalInformation from "../../../config/siteContent/generalInformation";
 import imagesPath from "../../../config/siteContent/imagesPath";
+import useFormattedPhoneNumber from "../../../hooks/usePhoneNumber";
 
 const FooterLinks = ({ links }) => {
   const navigate = useNavigate();
@@ -124,7 +125,9 @@ const Footer = () => {
             />
             <FooterContactInfo
               iconName={generalInformation.companyPhone.iconName}
-              title={generalInformation.companyPhone.fieldContent}
+              title={useFormattedPhoneNumber(
+                generalInformation.companyPhone.fieldContent
+              )}
               url={`tel:${generalInformation.companyPhone.fieldContent}`}
             />
           </Grid2>

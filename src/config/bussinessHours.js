@@ -1,9 +1,13 @@
 export const businessHours = {
-  Sunday: { open: null, close: null },
-  Monday: { open: "09:00", close: "17:00" },
-  Tuesday: { open: "09:00", close: "17:00" },
-  Wednesday: { open: "09:00", close: "17:00" },
-  Thursday: { open: "09:00", close: "17:00" },
-  Friday: { open: "09:00", close: "17:00" },
-  Saturday: { open: "10:00", close: "14:00" },
+  Sunday: {
+    open: null,
+    close: null,
+    note: "Limited availability at overtime rate",
+  },
+  Monday: { open: "9:00 AM", close: "5:00 PM" },
+  Tuesday: { open: "9:00 AM", close: "5:00 PM" },
+  Wednesday: { open: "9:00 AM", close: "5:00 PM" },
+  Thursday: { open: "9:00 AM", close: "5:00 PM" },
+  Friday: { open: "9:00 AM", close: "5:00 PM" },
+  Saturday: { open: null, close: null },
 };

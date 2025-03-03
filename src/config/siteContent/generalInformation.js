@@ -32,7 +32,7 @@ const generalInformation = {
   companyPhone: {
     iconName: "PhoneOutline",
     fieldName: "Phone",
-    fieldContent: "732.736.1393",
+    fieldContent: "+17327361393",
   },
   businessHours: {
     schedule: {

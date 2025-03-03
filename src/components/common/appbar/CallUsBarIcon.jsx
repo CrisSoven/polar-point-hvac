@@ -1,11 +1,14 @@
 import AppBarIcon from "./AppBarIcon";
 import generalInformation from "../../../config/siteContent/generalInformation";
+import useFormattedPhoneNumber from "../../../hooks/usePhoneNumber";
 
 const CallUsBarIcon = () => {
   return (
     <AppBarIcon
       iconName="Phone"
-      title={`${generalInformation.companyPhone.fieldContent}`}
+      title={useFormattedPhoneNumber(
+        generalInformation.companyPhone.fieldContent
+      )}
       subtitle="The Service You Need, Just a Call Away"
     />
   );
