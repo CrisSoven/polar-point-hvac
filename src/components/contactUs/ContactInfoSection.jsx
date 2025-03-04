@@ -1,12 +1,13 @@
-import ContactCards from "./ContactCards";
-import WhatsAppButton from "./WhatsappButton";
+import { Grid2 } from "@mui/material";
+import ContactInfoRow from "./ContactInfoRow";
+import ContactUsForm from "./ContactUsForm";
 
 const ContactInfoSection = () => {
   return (
-    <>
-      <ContactCards />
-      <WhatsAppButton />
-    </>
+    <Grid2 container spacing={2}>
+      <ContactInfoRow />
+      <ContactUsForm />
+    </Grid2>
   );
 };
 
