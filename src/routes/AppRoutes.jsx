@@ -9,7 +9,7 @@ import NotFound from "../pages/NotFound";
 
 const AppRoutes = () => {
   return (
-    <Router basename="/polar-point-hvac">
+    <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
