@@ -1,3 +1,5 @@
+import afterHoursValue from "../afterHoursValue";
+
 const generalInformation = {
   // General Site Information
   // Name of the company used the site name
@@ -36,12 +38,12 @@ const generalInformation = {
   },
   businessHours: {
     schedule: {
-      "Mon - Thu": "8 AM - 5 PM",
-      Fri: "8 AM - 1 PM",
+      "Mon - Thu": "9 AM - 5 PM",
+      Fri: "9 AM - 1 PM",
       Sat: "Closed",
       Sun: "Closed (limited availability at overtime rate)",
     },
-    afterHours: "Available at 1.5x Rate",
+    afterHours: `Available at ${afterHoursValue}x Rate`,
   },
 
   // Pages information used in the site navigation

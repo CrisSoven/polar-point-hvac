@@ -25,7 +25,7 @@ const useStoreStatus = () => {
       const currentMinute = parts.find((part) => part.type === "minute")?.value;
       const currentPeriod = parts.find(
         (part) => part.type === "dayPeriod"
-      )?.value; // AM o PM
+      )?.value;
 
       const todaySchedule = businessHours[weekday];
 
@@ -33,25 +33,25 @@ const useStoreStatus = () => {
         if (weekday === "Sunday" && todaySchedule.note) {
           setStatus({
             title: "Closed",
-            subtitle: todaySchedule.note,
-            icon: "StoreAlert",
+            subtitle: `${todaySchedule.note}`,
+            icon: "StoreClock",
           });
         } else {
           setStatus({
             title: "Closed",
-            subtitle: "Opens tomorrow",
-            icon: "StoreAlert",
+            subtitle: `Closed Today (GMT-5)`,
+            icon: "StoreRemove",
           });
         }
         return;
       }
 
-      const parseTime = (timeStr) => {
-        const [hour, minute, period] = timeStr.split(/[: ]/);
-        let hour24 = parseInt(hour);
+      const parseTime = (timeString) => {
+        const [hour, minute, period] = timeString.split(/[: ]/);
+        let hour24 = parseInt(hour, 10);
         if (period === "PM" && hour24 !== 12) hour24 += 12;
         if (period === "AM" && hour24 === 12) hour24 = 0;
-        return hour24 * 60 + parseInt(minute);
+        return hour24 * 60 + parseInt(minute, 10);
       };
 
       const openTime = parseTime(todaySchedule.open);
@@ -63,15 +63,23 @@ const useStoreStatus = () => {
       if (currentTime >= openTime && currentTime < closeTime) {
         setStatus({
           title: "Open Now",
-          subtitle: `Closes: ${todaySchedule.close}`,
+          subtitle: `Closes ${todaySchedule.close} (GMT-5)`,
           icon: "StoreCheck",
         });
       } else {
-        setStatus({
-          title: "Closed",
-          subtitle: `Opens ${todaySchedule.open} tomorrow`,
-          icon: "StoreRemove",
-        });
+        if (weekday === "Friday") {
+          setStatus({
+            title: "Closed",
+            subtitle: `Opens next business day`,
+            icon: "StoreRemove",
+          });
+        } else {
+          setStatus({
+            title: "Closed",
+            subtitle: `Opens ${todaySchedule.open} (GMT-5)`,
+            icon: "StoreRemove",
+          });
+        }
       }
     };
 

@@ -1,4 +1,4 @@
-import { Grid, Typography, Box } from "@mui/material";
+import { Grid2, Typography, Box } from "@mui/material";
 import * as MdiIcons from "mdi-material-ui";
 import PropTypes from "prop-types";
 
@@ -14,7 +14,7 @@ const Icon = ({ iconName }) => {
         justifyContent: "center",
         width: 56,
         height: 56,
-        borderRadius: "8px",
+        borderRadius: "12px",
         backgroundColor: "primary.main",
       }}
     >
@@ -34,15 +34,11 @@ const Title = ({ title }) => (
   </Typography>
 );
 
-const Subtitle = ({ subtitle }) => (
-  <Typography variant="body1" noWrap>
-    {subtitle}
-  </Typography>
-);
+const Subtitle = ({ subtitle }) => <Typography noWrap>{subtitle}</Typography>;
 
 const ContactCard = ({ iconName, title, subtitle }) => {
   return (
-    <Grid
+    <Grid2
       container
       sx={{
         padding: 2,
@@ -53,11 +49,11 @@ const ContactCard = ({ iconName, title, subtitle }) => {
       }}
     >
       <Icon iconName={iconName} />
-      <Grid sx={{ overflow: "hidden" }}>
+      <Grid2 sx={{ overflow: "hidden" }}>
         <Title title={title} />
         <Subtitle subtitle={subtitle} />
-      </Grid>
-    </Grid>
+      </Grid2>
+    </Grid2>
   );
 };
 

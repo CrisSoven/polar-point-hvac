@@ -4,7 +4,13 @@ import ContactUsForm from "./ContactUsForm";
 
 const ContactInfoSection = () => {
   return (
-    <Grid2 container spacing={2}>
+    <Grid2
+      container
+      size={{ xs: 12, sm: 12, md: 6 }}
+      justifyContent={{ xs: "center", md: "space-between" }}
+      alignItems="center"
+      spacing={2}
+    >
       <ContactInfoRow />
       <ContactUsForm />
     </Grid2>

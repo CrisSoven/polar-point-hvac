@@ -1,6 +1,8 @@
+import { Box, Grid2, Typography } from "@mui/material";
 import ContactCard from "./ContactCard";
+import BusinessHoursMenu from "./BusinessHoursMenu";
 import generalInformation from "../../config/siteContent/generalInformation";
-import { Box } from "@mui/material";
+import contactUsInformation from "../../config/siteContent/contactUsInformation";
 import useStoreStatus from "../../hooks/useStoreStatus";
 import usePhoneNumber from "../../hooks/usePhoneNumber";
 
@@ -26,11 +28,6 @@ const ContactCards = () => {
       title: generalInformation.companyPhone.fieldName,
       subtitle: formattedPhone,
     },
-    {
-      iconName: "ClockOutline",
-      title: "Business Hours",
-      subtitle: `${status.title} - ${status.subtitle}`,
-    },
   ];
 
   return (
@@ -43,6 +40,17 @@ const ContactCards = () => {
           subtitle={info.subtitle}
         />
       ))}
+      <Grid2 container alignItems="center">
+        <ContactCard
+          iconName="ClockOutline"
+          title="Business Hours"
+          subtitle={`${status.title} - ${status.subtitle}`}
+        />
+        <BusinessHoursMenu />
+      </Grid2>
+      <Typography fontWeight={"bold"} variant="body2" flexGrow={1}>
+        {contactUsInformation.afterHours}
+      </Typography>
     </Box>
   );
 };

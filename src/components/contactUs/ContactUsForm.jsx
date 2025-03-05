@@ -1,29 +1,72 @@
 import {
   TextField,
   Button,
-  Grid,
-  Box,
+  Grid2,
+  Card,
+  CardContent,
   InputAdornment,
   Typography,
 } from "@mui/material";
 import { useForm, Controller } from "react-hook-form";
-import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import EmailIcon from "@mui/icons-material/Email";
-import PhoneIcon from "@mui/icons-material/Phone";
-import DescriptionIcon from "@mui/icons-material/Description";
+import validationSchema from "./validationSchema";
+import AccountOutline from "mdi-material-ui/AccountOutline";
+import EmailOutline from "mdi-material-ui/EmailOutline";
+import PhoneOutline from "mdi-material-ui/PhoneOutline";
+import MapMarkerOutline from "mdi-material-ui/MapMarkerOutline";
+import ToolboxOutline from "mdi-material-ui/ToolboxOutline";
+import PropTypes from "prop-types";
 
-const schema = yup.object({
-  name: yup.string().required("Name is required"),
-  email: yup.string().email("Invalid email").required("Email is required"),
-  phone: yup
-    .string()
-    .matches(/^[0-9]{10}$/, "Phone must be 10 digits")
-    .required("Phone is required"),
-  serviceAddress: yup.string().required("Service address is required"),
-  description: yup.string().required("Description is required"),
-  availability: yup.array().min(2, "Please select a date range"),
-});
+const FormField = ({
+  name,
+  label,
+  control,
+  errors,
+  placeholder,
+  icon,
+  multiline = false,
+  rows,
+}) => (
+  <Grid2 size={{ xs: 12, sm: name === "email" || name === "phone" ? 6 : 12 }}>
+    <Typography fontWeight={600} variant="body2">
+      {label}
+    </Typography>
+    <Controller
+      name={name}
+      control={control}
+      render={({ field }) => (
+        <TextField
+          {...field}
+          fullWidth
+          multiline={multiline}
+          rows={rows}
+          error={!!errors[name]}
+          helperText={errors[name]?.message}
+          placeholder={placeholder}
+          slotProps={{
+            input: {
+              startAdornment: icon ? (
+                <InputAdornment position="start">{icon}</InputAdornment>
+              ) : null,
+            },
+          }}
+          aria-label={label}
+        />
+      )}
+    />
+  </Grid2>
+);
+
+FormField.propTypes = {
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  control: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired,
+  placeholder: PropTypes.string,
+  icon: PropTypes.element,
+  multiline: PropTypes.bool,
+  rows: PropTypes.number,
+};
 
 const ContactUsForm = () => {
   const {
@@ -31,136 +74,79 @@ const ContactUsForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(validationSchema),
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+    alert(JSON.stringify(data, null, 2));
   };
 
   return (
-    <Box
-      component="form"
-      onSubmit={handleSubmit(onSubmit)}
-      sx={{ maxWidth: 600, margin: "auto" }}
+    <Card
+      sx={{
+        padding: 2,
+        display: "flex",
+        height: "100%",
+        width: { xs: "100%", md: "60%" },
+        borderRadius: 4,
+        boxShadow: "0px 4px 40px 0px rgba(0, 0, 0, 0.10)",
+        flexDirection: "column",
+      }}
     >
-      <Grid container spacing={2}>
-        {/* Name */}
-        <Grid item xs={12}>
-          <Typography>Name</Typography>
-          <Controller
-            name="name"
-            control={control}
-            render={({ field }) => (
-              <TextField
-                {...field}
-                fullWidth
-                error={!!errors.name}
-                helperText={errors.name?.message}
-              />
-            )}
-          />
-        </Grid>
-
-        {/* Email */}
-        <Grid item xs={12} sm={6}>
-          <Typography>Email</Typography>
-          <Controller
-            name="email"
-            control={control}
-            render={({ field }) => (
-              <TextField
-                {...field}
-                fullWidth
-                error={!!errors.email}
-                helperText={errors.email?.message}
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <EmailIcon />
-                    </InputAdornment>
-                  ),
-                }}
-              />
-            )}
-          />
-        </Grid>
-
-        {/* Phone */}
-        <Grid item xs={12} sm={6}>
-          <Typography>Phone</Typography>
-          <Controller
-            name="phone"
-            control={control}
-            render={({ field }) => (
-              <TextField
-                {...field}
-                fullWidth
-                error={!!errors.phone}
-                helperText={errors.phone?.message}
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <PhoneIcon />
-                    </InputAdornment>
-                  ),
-                }}
-              />
-            )}
-          />
-        </Grid>
-
-        {/* Service Address */}
-        <Grid item xs={12}>
-          <Typography>Service Address</Typography>
-          <Controller
-            name="serviceAddress"
-            control={control}
-            render={({ field }) => (
-              <TextField
-                {...field}
-                fullWidth
-                error={!!errors.serviceAddress}
-                helperText={errors.serviceAddress?.message}
-              />
-            )}
-          />
-        </Grid>
-
-        {/* Description */}
-        <Grid item xs={12}>
-          <Typography>Description</Typography>
-          <Controller
-            name="description"
-            control={control}
-            render={({ field }) => (
-              <TextField
-                {...field}
-                multiline
-                rows={4}
-                fullWidth
-                error={!!errors.description}
-                helperText={errors.description?.message}
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <DescriptionIcon />
-                    </InputAdornment>
-                  ),
-                }}
-              />
-            )}
-          />
-        </Grid>
-
-        {/* Submit */}
-        <Grid item xs={12}>
-          <Button type="submit" variant="contained" color="primary" fullWidth>
-            Submit
-          </Button>
-        </Grid>
-      </Grid>
-    </Box>
+      <CardContent>
+        <form onSubmit={handleSubmit(onSubmit)} noValidate>
+          <Grid2 container spacing={2}>
+            <FormField
+              name="name"
+              label="Name"
+              placeholder="Your full name"
+              control={control}
+              errors={errors}
+              icon={<AccountOutline />}
+            />
+            <FormField
+              name="email"
+              label="Email"
+              placeholder="Your email address"
+              control={control}
+              errors={errors}
+              icon={<EmailOutline />}
+            />
+            <FormField
+              name="phone"
+              label="Phone"
+              placeholder="Your phone number"
+              control={control}
+              errors={errors}
+              icon={<PhoneOutline />}
+            />
+            <FormField
+              name="serviceAddress"
+              label="Service Address"
+              placeholder="Your service address"
+              control={control}
+              errors={errors}
+              icon={<MapMarkerOutline />}
+            />
+            <FormField
+              name="description"
+              label="Description"
+              control={control}
+              errors={errors}
+              placeholder="Describe your issue"
+              icon={<ToolboxOutline />}
+              multiline
+              rows={4}
+            />
+            <Grid2 size={{ xs: 12 }}>
+              <Button type="submit" variant="contained" color="secondary">
+                Submit
+              </Button>
+            </Grid2>
+          </Grid2>
+        </form>
+      </CardContent>
+    </Card>
   );
 };
 

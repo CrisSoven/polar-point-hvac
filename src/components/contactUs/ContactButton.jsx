@@ -8,7 +8,12 @@ const ContactButton = ({ icon, label, onClick, color = "primary" }) => {
       color={color}
       startIcon={icon}
       onClick={onClick}
-      sx={{ borderRadius: 2, textTransform: "none", color: "white" }}
+      sx={{
+        borderRadius: 8,
+        color: "white",
+        padding: "12px 24px",
+        boxShadow: "none",
+      }}
     >
       {label}
     </Button>
