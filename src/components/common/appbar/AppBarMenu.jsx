@@ -22,38 +22,40 @@ const AppBarMenu = () => {
   const closeMenu = () => setMenuAnchor(null);
 
   return (
-    <AppBar position="sticky" color="inherit">
-      <Toolbar
-        sx={{
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: theme.spacing(0, 2),
-        }}
-        variant="dense"
-      >
-        <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
-          <PolarPointLogo
-            sx={{ height: 28, display: { xs: "block", md: "none" } }}
-            src={imagesPath.whiteLogo}
-          />
-        </Box>
-
-        {isMobile ? (
-          <>
-            <IconButton color="primary" onClick={openMenu}>
-              <MenuIcon />
-            </IconButton>
-            <MobileMenu
-              anchorEl={menuAnchor}
-              open={Boolean(menuAnchor)}
-              onClose={closeMenu}
+    isMobile && (
+      <AppBar position="sticky" color="inherit">
+        <Toolbar
+          sx={{
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: theme.spacing(0, 2),
+          }}
+          variant="dense"
+        >
+          <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
+            <PolarPointLogo
+              sx={{ height: 28, display: { xs: "block", md: "none" } }}
+              src={imagesPath.whiteLogo}
             />
-          </>
-        ) : (
-          <NavigationLinks />
-        )}
-      </Toolbar>
-    </AppBar>
+          </Box>
+
+          {isMobile ? (
+            <>
+              <IconButton color="primary" onClick={openMenu}>
+                <MenuIcon />
+              </IconButton>
+              <MobileMenu
+                anchorEl={menuAnchor}
+                open={Boolean(menuAnchor)}
+                onClose={closeMenu}
+              />
+            </>
+          ) : (
+            <NavigationLinks />
+          )}
+        </Toolbar>
+      </AppBar>
+    )
   );
 };
 

@@ -10,9 +10,17 @@ import PropTypes from "prop-types";
 import { ChevronRight } from "mdi-material-ui";
 import ServiceBadge from "../../common/ServiceBadge";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ServiceCard = ({ image, title, description, badge }) => {
   const [isHovered, setIsHovered] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    navigate("/services");
+  };
 
   return (
     <Card
@@ -73,6 +81,7 @@ const ServiceCard = ({ image, title, description, badge }) => {
             color="secondary"
             endIcon={<ChevronRight />}
             fullWidth
+            onClick={handleClick}
           >
             View more
           </Button>

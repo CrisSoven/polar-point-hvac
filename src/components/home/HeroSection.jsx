@@ -22,7 +22,7 @@ const HeroSection = () => {
     <Box
       sx={{
         width: "100%",
-        minHeight: "80vh",
+        minHeight: "86vh",
         display: "flex",
         justifyContent: "center",
         color: "white",
@@ -50,19 +50,17 @@ const HeroSection = () => {
           alignContent="center"
           p={2}
         >
-          <Grid2>
-            <Typography variant="h2" fontWeight="bold">
+          <Grid2 container direction="column" spacing={2}>
+            <Typography variant="h1" fontWeight="bold">
               {homeConfiguration.heroSection.title}
             </Typography>
-          </Grid2>
-          <Grid2>
             <Typography variant="h6">
               {homeConfiguration.heroSection.subtitle}
             </Typography>
-          </Grid2>
-          <Grid2 container spacing={2}>
-            <CallUsNowButton />
-            <ContactUsButton />
+            <Grid2 container spacing={2}>
+              <CallUsNowButton />
+              <ContactUsButton />
+            </Grid2>
           </Grid2>
         </Grid2>
 

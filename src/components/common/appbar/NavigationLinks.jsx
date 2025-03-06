@@ -1,9 +1,8 @@
-import { Toolbar, useTheme } from "@mui/material";
+import { Toolbar } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import generalInformation from "../../../config/siteContent/generalInformation";
 
 const NavigationLinks = () => {
-  const theme = useTheme();
   const location = useLocation();
   const { quickLinks } = generalInformation;
 
@@ -26,7 +25,8 @@ const NavigationLinks = () => {
             style={{
               textDecoration: isActive ? "underline" : "none",
               fontWeight: isActive ? "bold" : "500",
-              color: theme.palette.primary.main,
+              fontSize: "0.9rem",
+              color: "white",
             }}
           >
             {title}

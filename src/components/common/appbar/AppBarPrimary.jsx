@@ -1,14 +1,8 @@
-import {
-  AppBar,
-  Toolbar,
-  Grid2,
-  useTheme,
-  useMediaQuery,
-} from "@mui/material";
-import CallUsNowButton from "../CallUsNowButton";
+import { AppBar, Toolbar, Grid2, useTheme, useMediaQuery } from "@mui/material";
 import IconsSection from "./IconsSection";
 import PolarPointLogo from "../PolarPointLogo";
 import imagesPath from "../../../config/siteContent/imagesPath";
+import NavigationLinks from "./NavigationLinks";
 
 const AppBarPrimary = () => {
   const theme = useTheme();
@@ -16,26 +10,23 @@ const AppBarPrimary = () => {
 
   return (
     <>
-      <AppBar position="relative">
+      <AppBar position={isMobile ? "relative" : "sticky"}>
         <Toolbar>
           <Grid2
             container
             alignItems="center"
             justifyContent="center"
             width="100%"
-            sx={{ paddingY: isMobile ? 2 : 0 }}
+            sx={{ paddingY: 2 }}
           >
-            {isMobile && <IconsSection />}
-
             {!isMobile && (
-              <Grid2 flexGrow={1}>
+              <Grid2 display={"flex"} direction={"column"} flexGrow={1}>
                 <PolarPointLogo src={imagesPath.logo} sx={{ height: 40 }} />
+                <NavigationLinks />
               </Grid2>
             )}
 
-            {!isMobile && <IconsSection />}
-
-            <CallUsNowButton />
+            <IconsSection />
           </Grid2>
         </Toolbar>
       </AppBar>

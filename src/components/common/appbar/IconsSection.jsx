@@ -3,7 +3,7 @@ import ScheduleBarIcon from "./ScheduleBarIcon";
 import CallUsBarIcon from "./CallUsBarIcon";
 
 const IconsSection = () => (
-  <Grid2 container>
+  <Grid2 container spacing={1}>
     <ScheduleBarIcon />
     <CallUsBarIcon />
   </Grid2>

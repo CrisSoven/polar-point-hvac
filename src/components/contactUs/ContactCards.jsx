@@ -41,12 +41,16 @@ const ContactCards = () => {
         />
       ))}
       <Grid2 container alignItems="center">
-        <ContactCard
-          iconName="ClockOutline"
-          title="Business Hours"
-          subtitle={`${status.title} - ${status.subtitle}`}
-        />
-        <BusinessHoursMenu />
+        <Grid2 size={{ xs: 10, md: 11 }} md="auto">
+          <ContactCard
+            iconName="ClockOutline"
+            title="Business Hours"
+            subtitle={`${status.title} - ${status.subtitle}`}
+          />
+        </Grid2>
+        <Grid2 size={{ xs: 2, md: 1 }} md="auto">
+          <BusinessHoursMenu />
+        </Grid2>
       </Grid2>
       <Typography fontWeight={"bold"} variant="body2" flexGrow={1}>
         {contactUsInformation.afterHours}

@@ -11,8 +11,8 @@ const ContactInfoSection = () => {
       alignItems="center"
       spacing={2}
     >
-      <ContactInfoRow />
       <ContactUsForm />
+      <ContactInfoRow />
     </Grid2>
   );
 };

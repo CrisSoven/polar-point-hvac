@@ -5,7 +5,7 @@ const homeConfiguration = {
 
   // Welcome Section Information
   heroSection: {
-    title: "Comfort and Efficiency for Your Home and Business",
+    title: "Climate comfort you can count on",
     subtitle:
       "Experts in repair, installation, and maintenance of HVAC systems.",
     //default: summer1, summer2, winter1, winter2
@@ -64,7 +64,7 @@ const homeConfiguration = {
       },
       button: {
         text: "Coming Soon!",
-        link: "/services/maintenance-plans",
+        link: "",
         type: "warning",
         icon: false,
       },

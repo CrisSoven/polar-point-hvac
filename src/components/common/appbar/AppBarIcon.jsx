@@ -10,7 +10,7 @@ const Icon = ({ iconName }) => {
     <IconComponent
       sx={{
         color: "error.main",
-        fontSize: 48,
+        fontSize: 40,
       }}
     />
   );
@@ -18,7 +18,7 @@ const Icon = ({ iconName }) => {
 
 const Title = ({ title }) => {
   return (
-    <Typography variant="body1" fontWeight={"bold"} noWrap>
+    <Typography variant="body2" fontWeight={"bold"} noWrap>
       {title}
     </Typography>
   );
@@ -37,10 +37,8 @@ const AppBarIcon = ({ iconName, title, subtitle }) => {
     <Grid2
       container
       sx={{
-        padding: 2,
         display: "grid",
         gridTemplateColumns: "auto 1fr",
-        gap: 1,
       }}
     >
       <Icon iconName={iconName} />

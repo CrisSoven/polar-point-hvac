@@ -14,6 +14,11 @@ import { useNavigate } from "react-router-dom";
 const ViewMoreServiceCard = ({ image, title, description, badge, button }) => {
   const navigate = useNavigate();
 
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    navigate(button.link);
+  };
+
   return (
     <Card
       sx={{
@@ -53,9 +58,7 @@ const ViewMoreServiceCard = ({ image, title, description, badge, button }) => {
             color={button.type || "secondary"}
             endIcon={button.icon && <ChevronRight />}
             fullWidth
-            onClick={() => {
-              navigate(button.link);
-            }}
+            onClick={!button.link ? null : handleClick}
           >
             {button.text}
           </Button>
