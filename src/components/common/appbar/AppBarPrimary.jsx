@@ -20,7 +20,7 @@ const AppBarPrimary = () => {
             sx={{ paddingY: 2 }}
           >
             {!isMobile && (
-              <Grid2 display={"flex"} direction={"column"} flexGrow={1}>
+              <Grid2 display={"flex"} flexGrow={1}>
                 <PolarPointLogo src={imagesPath.logo} sx={{ height: 40 }} />
                 <NavigationLinks />
               </Grid2>

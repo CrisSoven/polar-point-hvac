@@ -1,3 +1,10 @@
+/**
+ * Home Page Content Configuration
+ * 
+ * This file contains all the content displayed on the Home Page. 
+ * Any modifications to text, images, buttons, or sections on the Home Page should be made here.
+ */
+
 import imagesPath from "./imagesPath";
 
 const homeConfiguration = {
@@ -8,15 +15,23 @@ const homeConfiguration = {
     title: "Climate comfort you can count on",
     subtitle:
       "Experts in repair, installation, and maintenance of HVAC systems.",
-    //default: summer1, summer2, winter1, winter2
+    // Default images displayed in the hero section (rotates between summer and winter visuals)
+    //e.g: summer1, summer2, winter1, winter2
     imagesDisplayed: [imagesPath.summer1, imagesPath.summer2],
   },
+
   // Services Section Information
   servicesSection: {
     title: "Our Services",
     subtitle: "Fast and effective solutions for all your HVAC systems.",
   },
 
+  // Testimonials Section Information
+  testimonialsSection: {
+    title: "Testimonials",
+    subtitle:
+      "Our customers trust us for fast, efficient and professional service every time.",
+  },
   // Services Information
   companyServices: [
     {
@@ -27,7 +42,7 @@ const homeConfiguration = {
         "We are dedicated to delivering HVAC installations that ensure lasting comfort and dependable performance.",
       badge: {
         text: "1-Year Full Installation Warranty!",
-        //types: "success" (green) | "warning" (yellow) | "error" (red) | "secondary" (blue) || null (primary)
+        // Badge type options: "success" (green) | "warning" (yellow) | "error" (red) | "secondary" (blue) || null (primary)
         type: "success",
       },
       button: {
@@ -59,7 +74,7 @@ const homeConfiguration = {
         "Our maintenance plans provide regular, scheduled service to keep your HVAC system running efficiently, prevent unexpected breakdowns, and extend its lifespan.",
       badge: {
         text: "Coming Soon!",
-        //types: "success" (green) | "warning" (yellow) | "error" (red) | "secondary" (blue) || null (primary)
+        // Badge type options: "success" (green) | "warning" (yellow) | "error" (red) | "secondary" (blue) || null (primary)
         type: "warning",
       },
       button: {
@@ -80,10 +95,10 @@ const homeConfiguration = {
       {
         id: 1,
         iconName: "Handshake",
-        title: "Honestly",
+        title: "Honesty",
         description:
           "When it comes to HVAC service, we know you want a company you can trust. At Polar Point we provide honest assessments, clear explanations, and fair pricing—no hidden fees, no surprises. You can count on us to be upfront about what’s best for you and your system, ensuring you always feel confident in the work we do.",
-        //types: "success" (green) | "warning" (yellow) | "error" (red) | "secondary" (blue) || null (primary)
+        // Badge type options: "success" (green) | "warning" (yellow) | "error" (red) | "secondary" (blue) || null (primary)
         type: "secondary",
       },
       {
@@ -92,7 +107,7 @@ const homeConfiguration = {
         title: "Quality",
         description:
           "This is at the heart of everything we do. Our skilled technicians are dedicated to delivering results that exceed expectations, using top-of-the-line materials and industry-best practices. Whether it’s a routine repair, a complex installation, or preventive maintenance, we take pride in doing the job right the first time. Our focus on quality ensures the systems we install or service are efficient, reliable, and built to last.",
-        //types: "success" (green) | "warning" (yellow) | "error" (red) | "secondary" (blue) || null (primary)
+        // Badge type options: "success" (green) | "warning" (yellow) | "error" (red) | "secondary" (blue) || null (primary)
         type: "success",
       },
       {
@@ -101,7 +116,7 @@ const homeConfiguration = {
         title: "Communication",
         description:
           "Clear, open communication is essential to delivering outstanding service. From your initial inquiry to project completion, we make sure you’re informed and involved every step of the way. We prioritize keeping you in the loop, this ensures we understand your needs and can deliver solutions tailored to your home or business.",
-        //types: "success" (green) | "warning" (yellow) | "error" (red) | "secondary" (blue) || null (primary)
+        // Badge type options: "success" (green) | "warning" (yellow) | "error" (red) | "secondary" (blue) || null (primary)
         type: "warning",
       },
     ],

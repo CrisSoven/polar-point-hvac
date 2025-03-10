@@ -20,9 +20,7 @@ const FooterLinks = ({ links }) => {
             <Link
               to={to}
               onClick={(e) => {
-                // Evita el comportamiento predeterminado de navegación
                 e.preventDefault();
-                // Navega de forma programática con desplazamiento suave
                 navigate(to);
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}

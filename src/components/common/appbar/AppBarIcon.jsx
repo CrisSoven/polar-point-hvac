@@ -38,6 +38,8 @@ const AppBarIcon = ({ iconName, title, subtitle }) => {
       container
       sx={{
         display: "grid",
+        gap: 1,
+        py: 1,
         gridTemplateColumns: "auto 1fr",
       }}
     >

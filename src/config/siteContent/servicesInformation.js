@@ -1,5 +1,14 @@
 import imagesPath from "./imagesPath";
 
+/**
+ * Services Page Content Configuration
+ *
+ * This file defines the content for the "Services" page, including HVAC installation,
+ * repair, maintenance, and reasons to choose Polar Point HVAC.
+ * Any modifications related to the "Services" section should be made here.
+ */
+
+// Define the content for the services page
 const servicesInformation = {
   servicesSection: {
     title: "Services",
@@ -15,31 +24,31 @@ const servicesInformation = {
         title: "Customer-Focused Service",
         description:
           "Your satisfaction is our priority. From the first call to the final walkthrough, we work with integrity, transparency, and a commitment to exceeding expectations.",
-        iconName: "AccountGroupOutline",
+        iconName: "AccountGroupOutline", // Modify this value to change the icon
       },
       {
         title: "Expert Craftsmanship",
         description:
           "Our experienced technicians are equipped to handle even the most complex installations or repairs with precision and care. No shortcuts—just top-tier results.",
-        iconName: "WrenchOutline",
+        iconName: "WrenchOutline", // Modify this value to change the icon
       },
       {
         title: "Energy Savings Expertise for Businesses",
         description:
           "We help our commercial clients take full advantage of state rebates and energy incentives, optimizing your investment while making your building more energy-efficient.",
-        iconName: "LightbulbOnOutline",
+        iconName: "LightbulbOnOutline", // Modify this value to change the icon
       },
       {
         title: "Dependable & Responsive",
         description:
           "Whether it is a planned project or an emergency repair, you can count on us to show up on time, ready to deliver solutions that last.",
-        iconName: "ClockCheckOutline",
+        iconName: "ClockCheckOutline", // Modify this value to change the icon
       },
       {
         title: "Safety First",
         description:
           "Working with HVAC equipment requires skill and caution. Our team is trained to meet the highest safety standards, protecting you and your property.",
-        iconName: "ShieldAlertOutline",
+        iconName: "ShieldAlertOutline", // Modify this value to change the icon
       },
     ],
     conclusion:
@@ -51,19 +60,19 @@ const servicesInformation = {
       "We are dedicated to delivering HVAC installations that ensure lasting comfort and dependable performance.",
     content: [
       {
-        image: imagesPath.hvacInstallation[0],
+        image: imagesPath.hvacInstallation[0], // Change index (0, 1, 2) to modify the image
         text: "In HVAC, a proper installation involves much more than setting up equipment—it’s about attending to every detail with precision and expertise. Our approach begins with selecting high-quality systems that align with the unique needs of your home or business.",
-        direction: "row",
+        direction: "row", // Change to "row-reverse" to invert the direction
       },
       {
-        image: imagesPath.hvacInstallation[1],
+        image: imagesPath.hvacInstallation[1], //Change index to modify the image
         text: "From there, we carefully plan each aspect of the installation, considering factors like airflow, efficiency, and overall performance to ensure your system operates seamlessly. Using proven techniques and adhering to industry best practices, we ensure the work is done right, creating a system that delivers exceptional comfort and energy efficiency.",
-        direction: "row",
+        direction: "row", // Change to "row" if you want a standard alignment
       },
       {
-        image: imagesPath.hvacInstallation[2],
+        image: imagesPath.hvacInstallation[2], //Change index to modify the image
         text: "Equally important is thinking ahead to the system’s longevity. Maintenance is essential for any HVAC equipment, so we install units with future serviceability in mind, making it easier to keep them running smoothly year after year.",
-        direction: "row-reverse",
+        direction: "row-reverse", // Change to "row" if you want a standard alignment
       },
     ],
     conclusion:
@@ -76,21 +85,21 @@ const servicesInformation = {
     content: [
       {
         subtitle: "Repair",
-        content: "When an HVAC issue arises, it's important to address it promptly to avoid more extensive damage to your system.",
-        image: imagesPath.hvacInstallation[0],
+        content:
+          "When an HVAC issue arises, it's important to address it promptly to avoid more extensive damage to your system.",
+        image: imagesPath.hvacInstallation[0], // Change index (0, 1, 2) to modify the image
         text: "Our expert repair services are designed to quickly identify and resolve problems, restoring your system’s performance and reliability. Delaying repairs or ignoring issues can lead to long-term damage, reducing the lifespan of your equipment and leading to more costly repairs down the line. We understand that when your HVAC system isn’t functioning properly, it can disrupt your comfort and daily life, which is why we focus on providing dependable, efficient solutions to get your system back up and running as soon as possible.",
-        direction: "row",
+        direction: "row", // Change to "row-reverse" to invert the direction
       },
       {
         subtitle: "Maintenance",
-        content: "Regular HVAC maintenance is essential to keep your system operating at its best. Without it, small issues can escalate into major problems—leading to system failures when you need it most, costly repairs, or even water leaks that could damage your property.",
-        image: imagesPath.hvacInstallation[1],
+        content:
+          "Regular HVAC maintenance is essential to keep your system operating at its best. Without it, small issues can escalate into major problems—leading to system failures when you need it most, costly repairs, or even water leaks that could damage your property.",
+        image: imagesPath.hvacInstallation[1], //Change index to modify the image
         text: "Routine maintenance ensures that your system is running efficiently, reduces the risk of breakdowns, and helps prevent long-term damage to both your equipment and your home or business. By investing in regular maintenance, you're protecting not only the comfort of your space but also the longevity of your HVAC system, keeping it running smoothly when you need it the most.",
-        direction: "row",
+        direction: "row", // Change to "row-reverse" to invert the direction
       },
     ],
-    conclusion:
-      "This attention to detail, combined with our dedication to quality and thoughtful planning, results in installations that provide lasting performance, reliability, and comfort.",
   },
 };
 
